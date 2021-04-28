@@ -17,7 +17,7 @@ function App() {
     <main>
       <h1>Create React App + Go API</h1>
       <Autocomplete
-          apiKey="AIzaSyBOkEPBHm2tca3Lgg5e_z7NrmMlIk76IFY"
+          apiKey="AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE"
           onPlaceSelected={(place) => console.log(place)}
       />
       <h2>
