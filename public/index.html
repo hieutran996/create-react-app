@@ -13,7 +13,10 @@
       homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initService&libraries=places&v=weekly"
+      async
+    ></script>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -40,5 +43,23 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      function initService() {
+      const displaySuggestions = function (predictions, status) {
+        if (status != google.maps.places.PlacesServiceStatus.OK || !predictions) {
+          alert(status);
+          return;
+        }
+        predictions.forEach((prediction) => {
+          const li = document.createElement("li");
+          li.appendChild(document.createTextNode(prediction.description));
+          document.getElementById("results").appendChild(li);
+        });
+      };
+      const service = new google.maps.places.AutocompleteService();
+      service.getQueryPredictions({ input: "hanoi hoan kiem" }, displaySuggestions);
+    }
+    initService()
+    </script>
   </body>
 </html>

@@ -13,11 +13,12 @@ function App() {
     }
     getDate();
   }, []);
+  
   return (
     <main>
       <h1>Create React App + Go API</h1>
       <Autocomplete
-          apiKey="AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE"
+        apiKey="AIzaSyDClj11evZtd_p8FWLjY3jtXDlTu-54IxE"
           onPlaceSelected={(place) => console.log(place)}
       />
       <h2>
