@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import './App.css';
+import Autocomplete from "react-google-autocomplete";
 
 function App() {
   const [date, setDate] = useState(null);
@@ -15,6 +16,10 @@ function App() {
   return (
     <main>
       <h1>Create React App + Go API</h1>
+      <Autocomplete
+          apiKey="AIzaSyDY6T7UDfx5E_BYUYDmLnfbrFLLCit-yg4"
+          onPlaceSelected={(place) => console.log(place)}
+      />
       <h2>
         Deployed with{' '}
         <a
