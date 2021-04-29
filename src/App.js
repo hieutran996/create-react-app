@@ -4,7 +4,6 @@ import './App.css';
 import Autocomplete from "react-google-autocomplete";
 
 function App() {
-  const [date, setDate] = useState(null);
   useEffect(() => {
     fetch("https://social-eats-nightly.tsunago.asia/api/mobile/v1/global_settings", {
       method: 'get',
@@ -59,7 +58,6 @@ function App() {
       </p>
       <br />
       <h2>The date according to Go is:</h2>
-      <p>{date ? date : 'Loading date...'}</p>
     </main>
   );
 }
