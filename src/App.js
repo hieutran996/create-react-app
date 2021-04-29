@@ -6,12 +6,16 @@ import Autocomplete from "react-google-autocomplete";
 function App() {
   const [date, setDate] = useState(null);
   useEffect(() => {
-    async function getDate() {
-      const res = await fetch('/api/date');
-      const newDate = await res.text();
-      setDate(newDate);
-    }
-    getDate();
+    fetch("https://social-eats-nightly.tsunago.asia/api/mobile/v1/global_settings", {
+      method: 'get',
+    }).then(function(response) {
+      console.log(response)
+      return response.json();
+    }).then(function(data) {
+      console.log('Created Gist:', data);
+    }).catch((error) => {
+      console.log(error)
+    });
   }, []);
   
   return (
